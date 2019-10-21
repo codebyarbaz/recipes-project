@@ -1,0 +1,9 @@
+<div class="row">
+  <div class="col-12">
+    <h2 class="font-weight-normal mb-md-4 mb-3">Recipes List</h2>
+  </div>
+</div>
+<app-recipes-list-item
+  *ngFor="let recipe of recipesList"
+  [recipeDetail]="recipe"
+></app-recipes-list-item>
