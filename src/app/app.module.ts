@@ -4,10 +4,10 @@ import { FormsModule } from "@angular/forms";
 
 import { AppComponent } from "./app.component";
 import { HeaderComponent } from "./header/header.component";
-import { RecipesListComponent } from "./recipes/recipes-list/recipes-list.component";
-import { RecipesDetailComponent } from "./recipes/recipes-detail/recipes-detail.component";
-import { RecipesListItemComponent } from "./recipes/recipes-list/recipes-list-item/recipes-list-item.component";
-import { AddRecipeItemComponent } from "./recipes/recipes-list/add-recipe-item/add-recipe-item.component";
+import { RecipesListComponent } from "./recipes-list/recipes-list.component";
+import { RecipesDetailComponent } from "./recipes-detail/recipes-detail.component";
+import { RecipesListItemComponent } from "./recipes-list/recipes-list-item/recipes-list-item.component";
+import { AddRecipeItemComponent } from "./add-recipe-item/add-recipe-item.component";
 
 @NgModule({
   declarations: [

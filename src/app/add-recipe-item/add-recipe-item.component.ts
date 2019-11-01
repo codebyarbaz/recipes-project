@@ -1,5 +1,5 @@
 import { Component, OnInit, EventEmitter, Output } from "@angular/core";
-import { RecipesItem } from "../recipes-list.model";
+import { RecipesItem } from "./recipeItem.model";
 
 @Component({
   selector: "app-add-recipe-item",
@@ -19,10 +19,15 @@ export class AddRecipeItemComponent implements OnInit {
   ngOnInit() {}
 
   addNewRecipe(recipeTitle) {
+    // Send event to parent component
     this.onNewRecipeAdd.emit({
-      title: recipeTitle.value,
+      title: recipeTitle.value, // With local reference
       description: this.recipeDescription,
       image: this.recipeURL
     });
+    // Clear Form Fields
+    this.recipeDescription = "";
+    this.recipeURL = "";
+    recipeTitle.value = "";
   }
 }

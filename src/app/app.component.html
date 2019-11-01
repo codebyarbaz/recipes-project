@@ -3,8 +3,13 @@
 <div class="container mt-md-5 mt-3">
   <div class="row">
     <div class="col-md-5 col-12">
-      <app-add-recipe-item></app-add-recipe-item>
-      <app-recipes-list></app-recipes-list>
+      <app-add-recipe-item
+        (onNewRecipeAdd)="addNewRecipe($event)"
+      ></app-add-recipe-item>
+      <app-recipes-list
+        [recipesList]="recipes"
+        (OnDeleteRecipe)="DeleteRecipe($event)"
+      ></app-recipes-list>
     </div>
     <div class="col-md-7 col-12">
       <app-recipes-detail></app-recipes-detail>
