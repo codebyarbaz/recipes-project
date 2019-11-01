@@ -9,13 +9,13 @@ import { RecipesItem } from "../add-recipe-item/recipeItem.model";
 export class RecipesListComponent implements OnInit {
   @Input() recipesList: RecipesItem[] = [];
 
-  @Output() OnDeleteRecipe: EventEmitter<string> = new EventEmitter<string>();
+  @Output() OnDeleteRecipe: EventEmitter<number> = new EventEmitter<number>();
 
   constructor() {}
 
   ngOnInit() {}
 
-  deleteRecipe(title: string) {
-    this.OnDeleteRecipe.emit(title);
+  deleteRecipe(id: number) {
+    this.OnDeleteRecipe.emit(id);
   }
 }

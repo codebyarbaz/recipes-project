@@ -1,0 +1,35 @@
+<form>
+  <h2 class="font-weight-normal mb-3">Add New Item</h2>
+  <div class="form-group">
+    <input
+      type="text"
+      class="form-control"
+      placeholder="Name"
+      name="name"
+      [(ngModel)]="name"
+    />
+  </div>
+  <div class="form-group">
+    <input
+      type="text"
+      class="form-control"
+      placeholder="Price"
+      name="price"
+      [(ngModel)]="price"
+    />
+  </div>
+  <div class="form-group">
+    <input
+      type="text"
+      class="form-control"
+      placeholder="Quantity"
+      name="quantity"
+      [(ngModel)]="quantity"
+    />
+  </div>
+  <div class="form-group">
+    <button type="button" class="btn btn-success" (click)="addNewItem()">
+      Add
+    </button>
+  </div>
+</form>

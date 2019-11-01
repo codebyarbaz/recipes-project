@@ -1,0 +1,16 @@
+<ul class="list-group">
+  <li class="list-group-item">
+    <div class="row align-items-center justify-content-between">
+      <div class="col-4">{{ shoppingItem.name }}</div>
+      <div class="col-4">{{ shoppingItem.price | currency: USD }}</div>
+      <div class="col-4 text-right">
+        <button
+          class="btn btn-danger"
+          (click)="removeShoppingItem(shoppingItem.id)"
+        >
+          Remove
+        </button>
+      </div>
+    </div>
+  </li>
+</ul>

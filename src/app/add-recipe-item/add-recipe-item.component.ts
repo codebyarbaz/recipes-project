@@ -9,6 +9,7 @@ import { RecipesItem } from "./recipeItem.model";
 export class AddRecipeItemComponent implements OnInit {
   recipeDescription: string = "";
   recipeURL: string = "";
+  itemNumber: number = 1;
 
   @Output() onNewRecipeAdd: EventEmitter<RecipesItem> = new EventEmitter<
     RecipesItem
@@ -21,10 +22,12 @@ export class AddRecipeItemComponent implements OnInit {
   addNewRecipe(recipeTitle) {
     // Send event to parent component
     this.onNewRecipeAdd.emit({
+      id: this.itemNumber,
       title: recipeTitle.value, // With local reference
       description: this.recipeDescription,
       image: this.recipeURL
     });
+    this.itemNumber++;
     // Clear Form Fields
     this.recipeDescription = "";
     this.recipeURL = "";

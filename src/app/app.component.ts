@@ -1,5 +1,6 @@
 import { Component } from "@angular/core";
 import { RecipesItem } from "./add-recipe-item/recipeItem.model";
+import { ShoppingItem } from "./add-shopping-item/shopping-item.model";
 
 @Component({
   selector: "app-root",
@@ -8,27 +9,41 @@ import { RecipesItem } from "./add-recipe-item/recipeItem.model";
 })
 export class AppComponent {
   recipes: RecipesItem[] = [];
+  shoppingList: ShoppingItem[] = [];
 
-  constructor() {
-    // for (let i = 0; i < 3; i++) {
-    //   this.recipes.push(
-    //     new RecipesItem(
-    //       `Recipes ${i + 1}`,
-    //       "Some quick example text to build on the card title and make up the bulk of the cards content.",
-    //       "https://www.bbcgoodfood.com/sites/default/files/recipe-collections/collection-image/2013/05/caponata-pasta_1.jpg"
-    //     )
-    //   );
-    // }
+  display: string = "recipe";
+
+  constructor() {}
+
+  setSection(display: string): void {
+    this.display = display;
   }
 
-  addNewRecipe(recipeDetail: RecipesItem) {
-    this.recipes.push({ id: this.recipes.length, ...recipeDetail });
+  // Recipe
+  addNewRecipe(recipeDetail: RecipesItem): void {
+    this.recipes.push(recipeDetail);
   }
 
-  DeleteRecipe(title: string) {
-    const itemIndex = this.recipes.findIndex(item => item.title === title);
+  DeleteRecipe(id: number): void {
+    const itemIndex = this.recipes.findIndex(
+      (item: RecipesItem): boolean => item.id === id
+    );
     if (itemIndex > -1) {
       this.recipes.splice(itemIndex, 1);
+    }
+  }
+
+  // Shopping
+  onNewItemAdded(item: ShoppingItem): void {
+    this.shoppingList.push(item);
+  }
+
+  removeItem(id: number): void {
+    const itemIndex = this.shoppingList.findIndex(
+      (item: ShoppingItem): boolean => item.id === id
+    );
+    if (itemIndex > -1) {
+      this.shoppingList.splice(itemIndex, 1);
     }
   }
 }

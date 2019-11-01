@@ -1,3 +1,8 @@
 export class RecipesItem {
-  constructor(id: number, title: string, description: string, image: string) {}
+  constructor(
+    public id: number,
+    public title: string,
+    public description: string,
+    public image: string
+  ) {}
 }
